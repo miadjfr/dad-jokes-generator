@@ -13,16 +13,24 @@ const APIUrl = "https://api.api-ninjas.com/v1/dadjokes?limit=1";
 
 async function getbtn(){
 
-    jokeEl.innerText = "Ready ..."
-    
-    btnel.innerText = "Wait Boy !!!"
-     const response = await fetch(APIUrl , option );
-     const data = await response.json();
+    try {
+        jokeEl.innerText = "Ready ..."
 
-     jokeEl.innerText = data[0].joke;
+        btnel.innerText = "Wait Boy !!!"
+         const response = await fetch(APIUrl , option );
+         const data = await response.json();
+
+         jokeEl.innerText = data[0].joke;
 
 
-     btnel.innerText = "HEYY TELL ME A JOK!!!"
+         btnel.innerText = "HEYY TELL ME A JOK!!!"
+
+
+    } catch (error) {
+        jokeEl.innerText = "HEY BOY , INTERNET IS DOWN"
+
+    }
+
 
 
 
